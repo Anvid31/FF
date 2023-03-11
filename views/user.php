@@ -32,8 +32,11 @@ if( $validar == null || $validar = ''){
 
 
 <div class="col-xs-12">
-    <h1>Bienvenido Administrador <?php echo $_SESSION['nombre']; ?></h1> 
-      <br>
+    <h1>Bienvenido Administrador 
+    <?php echo $_SESSION['nombre']; ?></h1> 
+    
+    <br>
+
 		<h2>Lista de usuarios</h2>
     <br>
 		<div>
@@ -76,9 +79,7 @@ if( $validar == null || $validar = ''){
 				<?php
 
 $conexion=mysqli_connect("localhost","root","","r_user");               
-$SQL="SELECT user.id, user.nombre, user.correo, user.password, user.telefono,
-user.fecha, permisos.rol FROM user
-LEFT JOIN permisos ON user.rol = permisos.id";
+$SQL="SELECT user.id, user.nombre, user.correo, user.password, user.telefono, user.fecha, permisos.rol FROM user LEFT JOIN permisos ON user.rol = permisos.id";
 $dato = mysqli_query($conexion, $SQL);
 
 if($dato -> num_rows >0){
@@ -113,7 +114,7 @@ if($dato -> num_rows >0){
 }else{
 
     ?>
-    <tr class="text-center">
+    <tr class="text -center">
     <td colspan="16">No existen registros</td>
     </tr>
 

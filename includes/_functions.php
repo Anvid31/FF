@@ -7,6 +7,7 @@ require_once ("_db.php");
 
 if (isset($_POST['accion'])){ 
     switch ($_POST['accion']){
+        
         //casos de registros
         case 'editar_registro':
             editar_registro();
